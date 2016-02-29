@@ -1,0 +1,26 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>WickiQuicki</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <form>
+      <input id="wikiwiki" placeholder= "WikiQuicki" type="text" name="name" autocomplete="off"
+>
+    </form>
+    <div class="container">
+
+    </div>
+
+
+    <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
