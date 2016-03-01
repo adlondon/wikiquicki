@@ -22,7 +22,12 @@ var page = {
     console.log("CLICK ");
     var searchItem = $('#wikiwiki').val();
     var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+ searchItem.replace(" ", "%20") + '&limit=1&namespace=0&format=json';
+    if (searchItem === "") {
+      return false;
+    }
+    else {
     page.getData(url);
+  }
   });
 
   $('body').on('click', 'a', function() {
@@ -30,10 +35,6 @@ var page = {
     return false;
   });
 },
-
-  buildTemplate: function (templateStr) {
-  return _.template(templates['articleTemplate']);
-  },
 
   buildData: function (arr) {
 
@@ -57,13 +58,19 @@ var page = {
   addDataToDom: function (data, $target) {
     $target.html('');
     var htmlInsert = "";
+      if (data.title === undefined) {
+        return htmlInsert;
+      }
+      else {
       htmlInsert += '<div class="article">'+
             '<h1>' + data.title + '</h1>'+
-            '<h2>From Wikipedia, the free encyclopedia</h2>'+
+            '<p>From Wikipedia, the free encyclopedia</p>'+
             '<p class="extract">' + data.extract + '</p>' +
             '<a href="'+ data.link + '">' + data.link + '</a>' +
           '</div>';
+          }
     $target.html(htmlInsert);
+
   },
 
 }

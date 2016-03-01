@@ -10,14 +10,14 @@ h1 {
   font-weight: normal;
 }
 
-h2 {
+.extract {
   padding: 9px 0;
   line-height: 1.6;
   font-family: sans-serif;
-  font-weight: 500;
   border-bottom: 1px solid gray;
   border-top: 1px solid gray;
 }
 input {
-  width: 177px;
+  min-width: 100px;
+  width: 98%;
 }
