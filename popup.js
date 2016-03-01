@@ -59,7 +59,7 @@ var page = {
     $target.html('');
     var htmlInsert = "";
       if (data.title === undefined) {
-        return htmlInsert;
+        htmlInsert += '<p class= "error">There were no results matching the query.</p>';
       }
       else {
       htmlInsert += '<div class="article">'+

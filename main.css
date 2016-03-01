@@ -21,3 +21,7 @@ input {
   min-width: 100px;
   width: 98%;
 }
+
+.error {
+  min-width: 117px;
+}
